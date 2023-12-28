@@ -7,6 +7,7 @@ import SignUp from "../page/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../page/Login/Login";
 import BorrowBooks from "../page/BorrowBooks/BorrowBooks";
+import AllBooks from "../page/AllBooks/AllBooks";
 
 export const router = createBrowserRouter([
   {
@@ -49,7 +50,16 @@ export const router = createBrowserRouter([
       {
         path: "/borrowBooks",
         element: <BorrowBooks></BorrowBooks>,
-        loader: () => fetch('http://localhost:5000/allBorrowBooks')
+        loader: () => fetch("http://localhost:5000/allBorrowBooks"),
+      },
+      {
+        path: "/allBooks",
+        element: (
+          <PrivateRoute>
+            <AllBooks></AllBooks>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/allBooks"),
       },
     ],
   },

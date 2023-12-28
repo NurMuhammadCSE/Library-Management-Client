@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import Swal from "sweetalert2";
-import { useState } from "react";
 
 const BorrowBooksCard = ({ borrowBook }) => {
   const { image, name, category, returnDate, borrowedDate, _id } = borrowBook;
