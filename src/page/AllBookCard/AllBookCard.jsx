@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const AllBookCard = ({ book }) => {
-  const { image, name, author, category, rating } = book;
+  const { image, name, author, category, rating, _id } = book;
   return (
     <div>
       <div className="card w-96 h-4/5 bg-base-100 shadow-xl my-10">
@@ -17,7 +18,9 @@ const AllBookCard = ({ book }) => {
           <p>{rating}</p>
           <Rating style={{ maxWidth: 250 }} value={rating} readOnly />
           <div className="card-actions">
-            <button className="btn btn-primary">Update</button>
+            <button className="btn btn-primary">
+                <Link to={`/updateBook/${_id}`}>Update</Link>
+            </button>
           </div>
         </div>
       </div>

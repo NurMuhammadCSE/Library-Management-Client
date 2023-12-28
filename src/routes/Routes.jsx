@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import Login from "../page/Login/Login";
 import BorrowBooks from "../page/BorrowBooks/BorrowBooks";
 import AllBooks from "../page/AllBooks/AllBooks";
+import UpdateBook from "../page/UpdateBook/UpdateBook";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +62,11 @@ export const router = createBrowserRouter([
         ),
         loader: () => fetch("http://localhost:5000/allBooks"),
       },
+      {
+        path:'updateBook/:id',
+        element:<UpdateBook></UpdateBook>,
+        loader:(({params}) => fetch(`http://localhost:5000/updateBook/${params.id}`))
+      }
     ],
   },
 ]);
