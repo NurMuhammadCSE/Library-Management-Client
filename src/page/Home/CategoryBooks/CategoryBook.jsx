@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CategoryBook = ({ books }) => {
   const { name, image, author, category, rating, _id } = books;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-96 h-4/5 bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
         <img src={image} alt="Book" className="rounded-xl" />
       </figure>

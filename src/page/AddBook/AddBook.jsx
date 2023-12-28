@@ -1,10 +1,7 @@
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const UpdateBook = () => {
-  const updateBook = useLoaderData();
-  //   console.log(updateBook);
+const AddBook = () => {
   const {
     register,
     handleSubmit,
@@ -12,13 +9,11 @@ const UpdateBook = () => {
     formState: { errors },
   } = useForm();
 
-  const { image, name, author, rating, _id } = updateBook;
-
   const onSubmit = (data) => {
     console.log(data);
 
-    fetch(`http://localhost:5000/updateBook/${_id}`, {
-      method: "PUT",
+    fetch(`http://localhost:5000/addBook/`, {
+      method: "POST",
       headers: {
         "content-type": "application/json",
       },
@@ -27,12 +22,12 @@ const UpdateBook = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.modifiedCount) {
+        if (data.insertedId) {
           reset();
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: "Book is Updated successfully",
+            title: "Book is added successfully",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -48,7 +43,6 @@ const UpdateBook = () => {
         </div>
         <input
           type="text"
-          defaultValue={name}
           {...register("name", { required: true })}
           placeholder="Type here"
           className="input input-bordered w-full"
@@ -61,7 +55,6 @@ const UpdateBook = () => {
         <input
           type="text"
           {...register("author", { required: true })}
-          defaultValue={author}
           placeholder="Type here"
           className="input input-bordered w-full"
         />
@@ -73,7 +66,20 @@ const UpdateBook = () => {
         <input
           type="number"
           {...register("rating", { required: true })}
-          defaultValue={rating}
+          placeholder="Type here"
+          className="input input-bordered w-full"
+        />
+        {errors.rating && (
+          <span className="text-red-600">Rating is Nearest Value</span>
+        )}{" "}
+      </label>
+      <label className="form-control w-full">
+        <div className="label">
+          <span className="label-text">Quantity</span>
+        </div>
+        <input
+          type="number"
+          {...register("quantity", { required: true })}
           placeholder="Type here"
           className="input input-bordered w-full"
         />
@@ -88,7 +94,6 @@ const UpdateBook = () => {
         <input
           type="text"
           {...register("image", { required: true })}
-          defaultValue={image}
           placeholder="Type here"
           className="input input-bordered w-full"
         />
@@ -112,11 +117,22 @@ const UpdateBook = () => {
         </select>
       </label>
 
-      <button className="btn btn-neutral" type="submit">
-        Update Book
+      <label className="form-control">
+        <div className="label">
+          <span className="label-text">Book Description</span>
+        </div>
+        <textarea
+          className="textarea textarea-bordered h-24"
+          placeholder="Bio"
+        ></textarea>
+
+      </label>
+
+      <button className="btn btn-neutral mt-4" type="submit">
+        Add Book
       </button>
     </form>
   );
 };
 
-export default UpdateBook;
+export default AddBook;
