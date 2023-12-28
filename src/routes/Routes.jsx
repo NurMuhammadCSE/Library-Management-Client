@@ -5,6 +5,7 @@ import CategoryBooks from "../page/Home/CategoryBooks/CategoryBooks";
 import BookDetails from "../page/Home/BookDetails/BookDetails";
 import SignUp from "../page/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import Login from "../page/Login/Login";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ export const router = createBrowserRouter([
         path: "signup",
         element: <SignUp></SignUp>,
       },
+      {
+        path:'login',
+        element:<Login></Login>
+
+      }
     ],
   },
 ]);
