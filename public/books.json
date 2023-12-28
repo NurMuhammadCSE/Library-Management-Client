@@ -1,0 +1,146 @@
+[
+  {
+    "image": "https://img.freepik.com/free-vector/hand-drawn-world-book-day-background_52683-82824.jpg?w=740&t=st=1703685765~exp=1703686365~hmac=c94795195a882cfa3c775e5788f6586ee6fcbb9e8b7f980f60ead4408e46e654",
+    "name": "The Alchemist",
+    "quantity": 15,
+    "author": "Paulo Coelho",
+    "category": "Novel",
+    "description": "A philosophical novel about following your dreams.",
+    "rating": 4.8
+  },
+  {
+    "image": "https://img.freepik.com/free-photo/beautiful-halloween-concept-with-spell-books-skull_23-2148277550.jpg?w=740&t=st=1703685850~exp=1703686450~hmac=67f1f81f55acdbeb5ccf00b87b3557224498bd6ccbe424ef991972634ddc6950",
+    "name": "The Da Vinci Code",
+    "quantity": 12,
+    "author": "Dan Brown",
+    "category": "Thriller",
+    "description": "A gripping mystery involving secret societies.",
+    "rating": 4.5
+  },
+  {
+    "image": "https://img.freepik.com/free-vector/set-old-books-scrolls-parchments-papers_105738-988.jpg?w=826&t=st=1703685908~exp=1703686508~hmac=92892377adf1c47e2e6c7320d7ad0850b0af5f3e44664770ebe96aab02b4e589",
+    "name": "Sapiens: A Brief History of Humankind",
+    "quantity": 20,
+    "author": "Yuval Noah Harari",
+    "category": "History",
+    "description": "An exploration of the history and impact of Homo sapiens.",
+    "rating": 4.7
+  },
+  {
+    "image": "https://shorturl.at/jxzIL",
+    "name": "To Kill a Mockingbird",
+    "quantity": 18,
+    "author": "Harper Lee",
+    "category": "Drama",
+    "description": "A classic novel addressing racial injustice in the American South.",
+    "rating": 4.9
+  },
+  {
+    "image": "https://shorturl.at/oACTV",
+    "name": "Dune",
+    "quantity": 17,
+    "author": "Frank Herbert",
+    "category": "Sci-Fi",
+    "description": "A science fiction masterpiece set in a distant future.",
+    "rating": 4.6
+  },
+  {
+    "image": "https://shorturl.at/ozBK2",
+    "name": "Where the Wild Things Are",
+    "quantity": 25,
+    "author": "Maurice Sendak",
+    "category": "Kids",
+    "description": "A beloved children's book about imagination and adventure.",
+    "rating": 4.4
+  },
+  {
+    "image": "https://shorturl.at/bBTV9",
+    "name": "Gray's Anatomy",
+    "quantity": 10,
+    "author": "Henry Gray",
+    "category": "Medical",
+    "description": "A comprehensive guide to human anatomy for medical professionals.",
+    "rating": 4.6
+  },
+  {
+    "image": "https://shorturl.at/imGH6",
+    "name": "The Whole-Brain Child",
+    "quantity": 22,
+    "author": "Daniel J. Siegel",
+    "category": "Parenting",
+    "description": "Insights into understanding and nurturing a child's developing brain.",
+    "rating": 4.5
+  },
+  {
+    "image": "https://img.freepik.com/free-vector/hand-drawn-world-book-day-background_52683-82824.jpg?w=740&t=st=1703685765~exp=1703686365~hmac=c94795195a882cfa3c775e5788f6586ee6fcbb9e8b7f980f60ead4408e46e654",
+    "name": "The Book Thief",
+    "quantity": 14,
+    "author": "Markus Zusak",
+    "category": "Novel",
+    "description": "A novel narrated by Death, telling the story of a girl in Nazi Germany.",
+    "rating": 4.7
+  },
+  {
+    "image": "https://img.freepik.com/free-photo/beautiful-halloween-concept-with-spell-books-skull_23-2148277550.jpg?w=740&t=st=1703685850~exp=1703686450~hmac=67f1f81f55acdbeb5ccf00b87b3557224498bd6ccbe424ef991972634ddc6950",
+    "name": "Gone Girl",
+    "quantity": 13,
+    "author": "Gillian Flynn",
+    "category": "Thriller",
+    "description": "A psychological thriller exploring the complexities of a marriage.",
+    "rating": 4.4
+  },
+  {
+    "image": "https://img.freepik.com/free-vector/set-old-books-scrolls-parchments-papers_105738-988.jpg?w=826&t=st=1703685908~exp=1703686508~hmac=92892377adf1c47e2e6c7320d7ad0850b0af5f3e44664770ebe96aab02b4e589",
+    "name": "The Art of War",
+    "quantity": 18,
+    "author": "Sun Tzu",
+    "category": "History",
+    "description": "An ancient Chinese military treatise on strategy and warfare.",
+    "rating": 4.6
+  },
+  {
+    "image": "https://shorturl.at/jxzIL",
+    "name": "Hamlet",
+    "quantity": 20,
+    "author": "William Shakespeare",
+    "category": "Drama",
+    "description": "A classic play exploring themes of revenge and madness.",
+    "rating": 4.9
+  },
+  {
+    "image": "https://shorturl.at/oACTV",
+    "name": "Neuromancer",
+    "quantity": 16,
+    "author": "William Gibson",
+    "category": "Sci-Fi",
+    "description": "A cyberpunk novel that influenced the genre.",
+    "rating": 4.3
+  },
+  {
+    "image": "https://shorturl.at/ozBK2",
+    "name": "Green Eggs and Ham",
+    "quantity": 30,
+    "author": "Dr. Seuss",
+    "category": "Kids",
+    "description": "A delightful children's book encouraging trying new things.",
+    "rating": 4.8
+  },
+  {
+    "image": "https://shorturl.at/bBTV9",
+    "name": "The Immortal Life of Henrietta Lacks",
+    "quantity": 12,
+    "author": "Rebecca Skloot",
+    "category": "Medical",
+    "description": "A biography exploring the impact of HeLa cells on medical research.",
+    "rating": 4.5
+  },
+  {
+    "image": "https://shorturl.at/imGH6",
+    "name": "How to Talk So Kids Will Listen & Listen So Kids Will Talk",
+    "quantity": 25,
+    "author": "Adele Faber",
+    "category": "Parenting",
+    "description": "A guide for effective communication with children.",
+    "rating": 4.7
+  }
+]
