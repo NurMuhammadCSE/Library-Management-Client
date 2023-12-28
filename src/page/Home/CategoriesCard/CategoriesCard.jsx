@@ -13,7 +13,7 @@ const CategoriesCard = ({ item }) => {
         <h2 className="card-title">{category}</h2>
         <div className="card-actions">
           <button className="btn btn-primary">
-            <Link to={`/details/${category}`}>Details</Link>
+            <Link to={`/${category}`}>Explore</Link>
           </button>
         </div>
       </div>
