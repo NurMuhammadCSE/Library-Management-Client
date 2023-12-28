@@ -3,6 +3,8 @@ import Main from "../layout/Main";
 import Home from "../page/Home/Home/Home";
 import CategoryBooks from "../page/Home/CategoryBooks/CategoryBooks";
 import BookDetails from "../page/Home/BookDetails/BookDetails";
+import SignUp from "../page/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -16,15 +18,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "/:category",
-        element: <CategoryBooks></CategoryBooks>,
+        element: (
+          <PrivateRoute>
+            <CategoryBooks></CategoryBooks>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/${params.category}`),
       },
       {
         path: "/details/:id",
-        element: <BookDetails></BookDetails>,
+        element: (
+          <PrivateRoute>
+            <BookDetails></BookDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/details/${params.id}`),
+      },
+      {
+        path: "signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },
