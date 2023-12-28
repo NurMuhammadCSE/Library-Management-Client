@@ -21,8 +21,8 @@ const BookDetails = () => {
           <h1 className="text-5xl font-bold mb-4">{book.quantity}</h1>
           <h1 className="text-5xl font-bold mb-4">{book.category}</h1>
           <p className="text-lg text-neutral-500 mb-6">{book.description}</p>
-          <button className="btn btn-primary mx-10">Borrow</button>
-          <button className="btn btn-primary">Read</button>
+          <button className="btn btn-primary mx-10 px-10">Borrow</button>
+          <button className="btn btn-primary px-10">Read</button>
         </div>
       </div>
     </div>
