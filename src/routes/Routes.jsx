@@ -6,6 +6,7 @@ import BookDetails from "../page/Home/BookDetails/BookDetails";
 import SignUp from "../page/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../page/Login/Login";
+import BorrowBooks from "../page/BorrowBooks/BorrowBooks";
 
 export const router = createBrowserRouter([
   {
@@ -42,10 +43,14 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
-        path:'login',
-        element:<Login></Login>
-
-      }
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/borrowBooks",
+        element: <BorrowBooks></BorrowBooks>,
+        loader: () => fetch('http://localhost:5000/allBorrowBooks')
+      },
     ],
   },
 ]);

@@ -7,9 +7,9 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOut()
-    .then(() => {})
-    .catch(error => console.log(error))
-  }
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   const navOptions = (
     <>
       <li>
@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to="/">All Books</Link>
       </li>
       <li>
-        <Link to="/">Borrowed Books</Link>
+        <Link to="/borrowBooks">Borrowed Books</Link>
       </li>
       {user?.email ? (
         <li>

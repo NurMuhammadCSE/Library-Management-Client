@@ -13,41 +13,68 @@ const BookDetails = () => {
   const { register, handleSubmit, reset } = useForm();
   const [isBorrowed, setIsBorrowed] = useState(false);
 
+  function getFormattedDate() {
+    const today = new Date();
+    // Get day, month, and year
+    const day = today.getDate();
+    const month = today.getMonth() + 1; // Months are zero-based
+    const year = today.getFullYear();
+
+    // Add leading zeros if needed
+    const formattedDay = day < 10 ? "0" + day : day;
+    const formattedMonth = month < 10 ? "0" + month : month;
+
+    // Assemble the formatted date
+    const formattedDate = `${formattedDay}-${formattedMonth}-${year}`;
+
+    return formattedDate;
+  }
+
+  const todayFormatted = getFormattedDate();
+  console.log(todayFormatted);
+
   const handleAddBook = (event) => {
     const form = event.target;
-    const name = form.name.value;
+    const UserName = form.name.value;
     const email = form.email.value;
     const date = form.date.value;
-    const bookInfo = {
-      name,
-      email,
-      date,
-      bookId: _id,
-    };
 
-    fetch(`http://localhost:5000/borrowBook`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(bookInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          reset();
-          document.getElementById("my_modal_5").close();
-          setIsBorrowed(true);
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Your work has been saved",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
+    if (user && user?.email) {
+      const bookInfo = {
+        image,
+        category,
+        name,
+        UserName,
+        email,
+        returnDate: date,
+        borrowedDate: todayFormatted,
+        bookId: _id,
+      };
+
+      fetch(`http://localhost:5000/borrowBook`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(bookInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            reset();
+            document.getElementById("my_modal_5").close();
+            setIsBorrowed(true);
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Your work has been saved",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+    }
   };
 
   // const onSubmit = (data) => {
