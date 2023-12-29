@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
+import { useNavigate, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateBook = () => {
   const updateBook = useLoaderData();
   //   console.log(updateBook);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -16,6 +18,7 @@ const UpdateBook = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    data.rating = Number(data.rating);
 
     fetch(`http://localhost:5000/updateBook/${_id}`, {
       method: "PUT",
@@ -36,6 +39,7 @@ const UpdateBook = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          navigate("/allBooks");
         }
       });
   };

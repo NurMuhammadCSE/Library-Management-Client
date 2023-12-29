@@ -11,7 +11,9 @@ const AddBook = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-
+    data.rating = Number(data.rating);
+    data.quantity = Number(data.quantity);
+    
     fetch(`http://localhost:5000/addBook/`, {
       method: "POST",
       headers: {
