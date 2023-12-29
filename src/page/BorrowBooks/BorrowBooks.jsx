@@ -1,18 +1,32 @@
 import { useLoaderData } from "react-router-dom";
 import BorrowBooksCard from "../BorrowBooksCard/BorrowBooksCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const BorrowBooks = () => {
-  const borrowBooks = useLoaderData();
+  // const borrowBooks = useLoaderData();
   const [loading, setLoading] = useState(true);
+  const [borrowBooks, setBorrowBooks] = useState('')
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     // Simulate an asynchronous data fetch
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, []); // useEffect runs only once, simulating initial data fetching
+
+    fetch(`http://localhost:5000/allBorrowBooks?email=${user?.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('library-access')}`
+      },
+    })
+    .then(res => res.json())
+    .then(data => {
+      setBorrowBooks(data)
+    })
+  }, [user?.email]); // useEffect runs only once, simulating initial data fetching
 
   if (loading) {
     // Show loading spinner while fetching data

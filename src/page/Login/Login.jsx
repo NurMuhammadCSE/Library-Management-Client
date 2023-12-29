@@ -27,9 +27,28 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+
     signIn(email, password).then((result) => {
       const user = result.user;
+
+      const loggedInUser = {
+        email: user.email,
+      };
+
+      fetch("http://localhost:5000/jwt", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(loggedInUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          // Warning
+          localStorage.setItem("library-access", data.token);
+        });
+
       console.log(user);
       Swal.fire({
         title: "User Login Successful.",

@@ -7,18 +7,14 @@ const AllBooks = () => {
   const allBooks = useLoaderData();
   const [loading, setLoading] = useState(true);
   const [asc, setAcs] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearch = () => {
-    // Call the onSearch prop with the current search term
-    onSearch(searchTerm);
-  };
 
   useEffect(() => {
     // Simulate an asynchronous data fetch
     setTimeout(() => {
       setLoading(false);
     }, 2000);
+
+    
   }, []); // useEffect runs only once, simulating initial data fetching
 
   if (loading) {
