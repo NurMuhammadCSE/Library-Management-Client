@@ -18,8 +18,27 @@ const SignUp = () => {
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password).then((result) => {
-      const loggedUser = result.user;
-      console.log(loggedUser);
+      const user = result.user;
+      console.log(user);
+
+      const loggedInUser = {
+        email: user.email,
+      };
+
+      fetch("http://localhost:5000/jwt", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(loggedInUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          // Warning
+          localStorage.setItem("library-access", data.token);
+        });
+
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
           console.log("user profile info updated");
