@@ -1,12 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import AllBookCard from "../AllBookCard/AllBookCard";
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
 const AllBooks = () => {
-  const allBooks = useLoaderData();
+  // const allBooks = useLoaderData();
   const [loading, setLoading] = useState(true);
   const [asc, setAcs] = useState(true);
+  const [allBooks, setAllBooks] = useState('')
 
   useEffect(() => {
     // Simulate an asynchronous data fetch
@@ -14,7 +15,11 @@ const AllBooks = () => {
       setLoading(false);
     }, 2000);
 
-    
+    fetch(`http://localhost:5000/allBooks`)
+    .then(res => res.json())
+    .then(data => {
+      setAllBooks(data)
+    })
   }, []); // useEffect runs only once, simulating initial data fetching
 
   if (loading) {
