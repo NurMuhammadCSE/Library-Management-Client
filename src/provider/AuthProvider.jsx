@@ -14,7 +14,7 @@ import { FirebaseApp } from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
 
-const auth = getAuth(FirebaseApp)
+const auth = getAuth(FirebaseApp);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -31,11 +31,10 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  
   const googleSignIn = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
-}
+  };
 
   const logOut = () => {
     setLoading(true);
@@ -53,6 +52,29 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       console.log("current user", currentUser);
+
+      if (currentUser && currentUser?.email) {
+        const loggedInUser = {
+          email: currentUser.email,
+        };
+
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(loggedInUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // Warning
+            localStorage.setItem("library-access", data.token);
+          });
+      } else {
+        localStorage.removeItem("library-access");
+      }
+
       setLoading(false);
     });
     return () => {
@@ -67,7 +89,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     updateUserProfile,
-    googleSignIn
+    googleSignIn,
   };
 
   return (

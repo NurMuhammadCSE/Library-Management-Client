@@ -32,24 +32,6 @@ const Login = () => {
     signIn(email, password).then((result) => {
       const user = result.user;
 
-      const loggedInUser = {
-        email: user.email,
-      };
-
-      fetch("http://localhost:5000/jwt", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(loggedInUser),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          // Warning
-          localStorage.setItem("library-access", data.token);
-        });
-
       console.log(user);
       Swal.fire({
         title: "User Login Successful.",
@@ -131,10 +113,11 @@ const Login = () => {
                 />
               </div>
             </form>
-            <p>
-              <small className="ml-4">
-                New Here? <Link to="/signup">Create an account</Link>{" "}
-              </small>
+            <p className="my-4 text-center">
+              New to Car Doctors{" "}
+              <Link className="text-orange-600 font-bold" to="/signup">
+                Sign Up
+              </Link>{" "}
             </p>
 
             <SocialLogin></SocialLogin>

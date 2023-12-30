@@ -8,7 +8,6 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        localStorage.removeItem("library-access");
       })
       .catch((error) => console.log(error));
   };
