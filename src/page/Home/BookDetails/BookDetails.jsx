@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { Rating } from '@smastrom/react-rating'
 
 const BookDetails = () => {
   // const params = useParams();
@@ -113,14 +114,15 @@ const BookDetails = () => {
           className="max-w-xl rounded-lg shadow-2xl mb-4 lg:mb-0"
         />
         <div className="text-center lg:text-left lg:pl-8">
-          <h1 className="text-5xl font-bold mb-4">{name}</h1>
-          <h1 className="text-5xl font-bold mb-4">{author}</h1>
-          <h1 className="text-5xl font-bold mb-4">{rating}</h1>
-          <h1 className="text-5xl font-bold mb-4">{quantity}</h1>
-          <h1 className="text-5xl font-bold mb-4">{category}</h1>
-          <p className="text-lg text-neutral-500 mb-6">{description}</p>
+          <h1 className="text-3xl font-bold mb-4">{name}</h1>
+          <h1 className="text-2xl mb-4">By: <span className="text-primary">{author}</span> </h1>
+          <h1 className="text-2xl mb-4">Category: <span className="text-primary">
+          {category}</span> </h1>
+          <h1 className="text-2xl mb-4">Quantity: {quantity}</h1>
+          <Rating style={{ maxWidth: 250 }} value={rating} readOnly />
+          <p className="text-lg mt-6"> Description: {description}</p>
           <button
-            className={`btn ${
+            className={`btn mt-4 ${
               isBorrowed ? "btn-warning" : "btn-primary"
             } mx-10 px-10`}
             onClick={() => {

@@ -116,7 +116,7 @@ const UpdateBook = () => {
         </select>
       </label>
 
-      <button className="btn btn-neutral" type="submit">
+      <button className="btn btn-neutral mt-4" type="submit">
         Update Book
       </button>
     </form>

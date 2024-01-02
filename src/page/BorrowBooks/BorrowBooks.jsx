@@ -1,8 +1,9 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BorrowBooksCard from "../BorrowBooksCard/BorrowBooksCard";
 import { useContext, useEffect, useState } from "react";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const BorrowBooks = () => {
   // const borrowBooks = useLoaderData();
@@ -32,7 +33,42 @@ const BorrowBooks = () => {
           navigate("/");
         }
       });
-  }, [user?.email]); // useEffect runs only once, simulating initial data fetching
+  }, [navigate, user?.email]); // useEffect runs only once, simulating initial data fetching
+
+  const handleReturnBook = (id) => {
+    // Show a confirmation dialog before proceeding
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, return it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Send DELETE request to return the book
+        fetch(`http://localhost:5000/returnBorrowBook/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount) {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Book is returned successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              const remaining = borrowBooks.filter((book) => book._id !== id);
+              setBorrowBooks(remaining);
+            }
+          });
+      }
+    });
+  };
 
   if (loading) {
     // Show loading spinner while fetching data
@@ -62,6 +98,7 @@ const BorrowBooks = () => {
           <BorrowBooksCard
             key={borrowBook._id}
             borrowBook={borrowBook}
+            handleReturnBook={handleReturnBook}
           ></BorrowBooksCard>
         ))}
       </div>

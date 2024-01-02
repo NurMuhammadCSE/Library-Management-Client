@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { AwesomeButton } from "react-awesome-button";
 
 const CategoriesCard = ({ item }) => {
-//   console.log(item);
+  //   console.log(item);
   const { image, category } = item;
   return (
     <div className="card w-56 h-72 bg-base-100 shadow-xl">
@@ -12,9 +13,9 @@ const CategoriesCard = ({ item }) => {
       <div className="card-body items-center text-center">
         <h2 className="card-title">{category}</h2>
         <div className="card-actions">
-          <button className="btn btn-primary">
-            <Link to={`/${category}`}>Explore</Link>
-          </button>
+          <Link to={`/${category}`}>
+            <AwesomeButton type="primary">Explore</AwesomeButton>
+          </Link>
         </div>
       </div>
     </div>

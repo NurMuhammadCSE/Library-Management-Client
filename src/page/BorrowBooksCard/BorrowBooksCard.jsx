@@ -1,41 +1,8 @@
 /* eslint-disable react/prop-types */
-import Swal from "sweetalert2";
+import { AwesomeButton } from "react-awesome-button";
 
-const BorrowBooksCard = ({ borrowBook }) => {
+const BorrowBooksCard = ({ borrowBook, handleReturnBook }) => {
   const { image, name, category, returnDate, borrowedDate, _id } = borrowBook;
-
-  const handleReturnBook = (_id) => {
-    // Show a confirmation dialog before proceeding
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, return it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Send DELETE request to return the book
-        fetch(`http://localhost:5000/returnBorrowBook/${_id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount) {
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Book is returned successfully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            }
-          });
-      }
-    });
-  };
 
   return (
     <div>
@@ -49,12 +16,9 @@ const BorrowBooksCard = ({ borrowBook }) => {
           <p>{borrowedDate}</p>
           <p>{returnDate}</p>
           <div className="card-actions">
-            <button
-              onClick={() => handleReturnBook(_id)}
-              className={`btn btn-primary}`}
-            >
+            <AwesomeButton onClick={() => handleReturnBook(_id)} type="primary">
               Return
-            </button>
+            </AwesomeButton>
           </div>
         </div>
       </div>
