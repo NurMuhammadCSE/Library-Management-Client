@@ -16,9 +16,9 @@ const BorrowBooksCard = ({ borrowBook, handleReturnBook }) => {
           <p>{borrowedDate}</p>
           <p>{returnDate}</p>
           <div className="card-actions">
-            <AwesomeButton onClick={() => handleReturnBook(_id)} type="primary">
-              Return
-            </AwesomeButton>
+            <button onClick={() => handleReturnBook(_id)}>
+              <AwesomeButton type="primary">Return</AwesomeButton>
+            </button>
           </div>
         </div>
       </div>
