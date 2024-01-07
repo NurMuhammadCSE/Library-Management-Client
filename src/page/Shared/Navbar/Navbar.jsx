@@ -12,7 +12,7 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
   const navOptions = (
-    <>
+    <div className="flex items-center justify-center">
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -26,15 +26,24 @@ const Navbar = () => {
         <Link to="/borrowBooks">Borrowed Books</Link>
       </li>
       {user?.email ? (
-        <li>
-          <Link onClick={handleLogOut}>Log Out</Link>
-        </li>
+        <div className="flex items-center justify-center">
+          <li>
+            <Link onClick={handleLogOut}>Log Out</Link>
+          </li>
+          <li>
+            <div className="avatar">
+              <div className="w-12 rounded-full">
+                <img src={user?.photoURL} />
+              </div>
+            </div>
+          </li>
+        </div>
       ) : (
         <li>
           <Link to="/login">Login</Link>
         </li>
       )}
-    </>
+    </div>
   );
   return (
     <div className="navbar bg-base-100 justify-between">
@@ -63,10 +72,10 @@ const Navbar = () => {
             {navOptions}
           </ul>
         </div>
-          <Link to={"/"} className="flex items-center text-xl">
-            {" "}
-            <img className="w-12" src={logo} alt="" /> Library Management
-          </Link>
+        <Link to={"/"} className="flex items-center text-xl">
+          {" "}
+          <img className="w-12" src={logo} alt="" /> Library Management
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>

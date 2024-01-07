@@ -1,44 +1,42 @@
-{
-  "testimonials": [
-    {
-      "name": "Alice Johnson",
-      "position": "Marketing Manager",
-      "company": "ABC Corporation",
-      "testimonial": "We are extremely satisfied with the library's collection. The variety of books available is impressive, and the staff is always helpful.",
-      "rating": 5,
-      "profilePicture": "https://example.com/alice.jpg"
-    },
-    {
-      "name": "Bob Smith",
-      "position": "Software Engineer",
-      "company": "XYZ Tech",
-      "testimonial": "The library management system is user-friendly and efficient. Checking out books is a breeze, and the online catalog makes it easy to find what I need.",
-      "rating": 4.5,
-      "profilePicture": "https://example.com/bob.jpg"
-    },
-    {
-      "name": "Catherine Brown",
-      "position": "Student",
-      "company": "City University",
-      "testimonial": "As a student, the library is my go-to place for research. The vast array of academic resources and comfortable study spaces make it an ideal environment for learning.",
-      "rating": 4,
-      "profilePicture": "https://example.com/catherine.jpg"
-    },
-    {
-      "name": "David Miller",
-      "position": "Book Enthusiast",
-      "company": "Independent",
-      "testimonial": "I've been a regular visitor to this library for years. The well-organized shelves and friendly staff create a welcoming atmosphere. It's a haven for book lovers!",
-      "rating": 4.8,
-      "profilePicture": "https://example.com/david.jpg"
-    },
-    {
-      "name": "Elena Martinez",
-      "position": "Parent",
-      "company": "Martinez Family",
-      "testimonial": "The children's section is fantastic! My kids love the diverse collection of picture books and the cozy reading nook. It's a great place for families.",
-      "rating": 5,
-      "profilePicture": "https://example.com/elena.jpg"
-    }
-  ]
-}
+[
+  {
+    "name": "Alice Johnson",
+    "position": "Marketing Manager",
+    "company": "ABC Corporation",
+    "testimonial": "We are extremely satisfied with the library's collection. The variety of books available is impressive, and the staff is always helpful.",
+    "rating": 5,
+    "profilePicture": "https://example.com/alice.jpg"
+  },
+  {
+    "name": "Bob Smith",
+    "position": "Software Engineer",
+    "company": "XYZ Tech",
+    "testimonial": "The library management system is user-friendly and efficient. Checking out books is a breeze, and the online catalog makes it easy to find what I need.",
+    "rating": 4.5,
+    "profilePicture": "https://example.com/bob.jpg"
+  },
+  {
+    "name": "Catherine Brown",
+    "position": "Student",
+    "company": "City University",
+    "testimonial": "As a student, the library is my go-to place for research. The vast array of academic resources and comfortable study spaces make it an ideal environment for learning.",
+    "rating": 4,
+    "profilePicture": "https://example.com/catherine.jpg"
+  },
+  {
+    "name": "David Miller",
+    "position": "Book Enthusiast",
+    "company": "Independent",
+    "testimonial": "I've been a regular visitor to this library for years. The well-organized shelves and friendly staff create a welcoming atmosphere. It's a haven for book lovers!",
+    "rating": 4.8,
+    "profilePicture": "https://example.com/david.jpg"
+  },
+  {
+    "name": "Elena Martinez",
+    "position": "Parent",
+    "company": "Martinez Family",
+    "testimonial": "The children's section is fantastic! My kids love the diverse collection of picture books and the cozy reading nook. It's a great place for families.",
+    "rating": 5,
+    "profilePicture": "https://example.com/elena.jpg"
+  }
+]

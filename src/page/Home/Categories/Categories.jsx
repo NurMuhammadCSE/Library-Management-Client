@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import CategoriesCard from "../CategoriesCard/CategoriesCard";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Categories = ({ categoriesData }) => {
   //   console.log(categoriesData);
@@ -36,10 +35,7 @@ const Categories = ({ categoriesData }) => {
   }
   return (
     <div>
-      <SectionTitle
-        heading={"Book Categories"}
-        subHeading={"Please Explore Category"}
-      ></SectionTitle>
+
       <div className="grid md:grid-cols-4 justify-center items-center gap-6 mb-16">
         {categoriesData?.map((item) => (
           <CategoriesCard key={item.id} item={item}></CategoriesCard>
