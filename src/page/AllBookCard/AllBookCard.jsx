@@ -19,7 +19,7 @@ const AllBookCard = ({ book }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Send DELETE request to return the book
-        fetch(`http://localhost:5000/returnBorrowBook/${_id}`, {
+        fetch(`http://localhost:5000/deleteBook/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -38,24 +38,24 @@ const AllBookCard = ({ book }) => {
       }
     });
   }
+
   return (
     <div>
-      <div className="card w-96 h-4/5 bg-base-100 shadow-xl my-10">
+      <div className="card w-96 h-4/5 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img src={image} alt="Books" className="rounded-xl w-fit" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>
-          <p>{author}</p>
-          <p>{category}</p>
-          <p>{rating}</p>
+          <p>By {author}</p>
+          <p>Category: {category}</p>
           <Rating style={{ maxWidth: 250 }} value={rating} readOnly />
           <div className="card-actions">
             <button className="btn btn-primary">
                 <Link to={`/updateBook/${_id}`}>Update</Link>
             </button>
             <button onClick={() => handelDeleteBook(_id)} className="btn btn-primary">
-                <Link>Delete</Link>
+                Delete
             </button>
           </div>
         </div>

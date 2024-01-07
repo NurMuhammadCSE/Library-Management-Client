@@ -12,9 +12,9 @@ const BorrowBooksCard = ({ borrowBook, handleReturnBook }) => {
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>
-          <p>{category}</p>
-          <p>{borrowedDate}</p>
-          <p>{returnDate}</p>
+          <p>Category: {category}</p>
+          <p>Borrowed Date: {borrowedDate}</p>
+          <p>Return Date: {returnDate}</p>
           <div className="card-actions">
             <button onClick={() => handleReturnBook(_id)}>
               <AwesomeButton type="primary">Return</AwesomeButton>

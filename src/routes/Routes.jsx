@@ -10,11 +10,14 @@ import BorrowBooks from "../page/BorrowBooks/BorrowBooks";
 import AllBooks from "../page/AllBooks/AllBooks";
 import UpdateBook from "../page/UpdateBook/UpdateBook";
 import AddBook from "../page/AddBook/AddBook";
+import NotFound from "../page/NotFound/NotFound";
+import ServerDown from "../page/ServerDown/ServerDown";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ServerDown></ServerDown>,
     children: [
       {
         path: "/",
@@ -82,6 +85,10 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path:'*',
+        element: <NotFound></NotFound>
+      }
     ],
   },
 ]);

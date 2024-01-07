@@ -11,7 +11,7 @@ const Categories = ({ categoriesData }) => {
     // Simulate an asynchronous data fetch
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 3000);
   }, []); // useEffect runs only once, simulating initial data fetching
 
   if (loading) {

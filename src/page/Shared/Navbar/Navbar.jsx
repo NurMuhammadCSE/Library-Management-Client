@@ -63,7 +63,7 @@ const Navbar = () => {
             {navOptions}
           </ul>
         </div>
-          <Link className="flex items-center text-xl">
+          <Link to={"/"} className="flex items-center text-xl">
             {" "}
             <img className="w-12" src={logo} alt="" /> Library Management
           </Link>

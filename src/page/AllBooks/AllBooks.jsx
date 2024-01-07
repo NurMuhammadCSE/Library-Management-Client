@@ -54,7 +54,7 @@ const AllBooks = () => {
         subHeading={"Please Explore Books"}
       ></SectionTitle>
       Rating:{" "}
-      <button onClick={() => setAcs(!asc)} className="btn btn-accent">
+      <button onClick={() => setAcs(!asc)} className="btn btn-accent mb-4">
         {asc ? "Ascending" : "Descending"}
       </button>
       <input type="button" value="" />
